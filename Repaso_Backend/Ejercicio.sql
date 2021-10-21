@@ -1,26 +1,23 @@
 DROP DATABASE IF EXISTS jurassic;
 CREATE DATABASE jurassic;
-\c jurassic; --Te mueve a la base de datos
-
+\c jurassic;
+--Te mueve a la base de datos
 
 -- CREATE TABLES
 CREATE TABLE lugares (
   id SERIAL PRIMARY KEY,
   nombre TEXT NOT NULL
 );
-
 CREATE TABLE tipos_incidentes (
   id SERIAL PRIMARY KEY,
   nombre TEXT NOT NULL
 );
-
 CREATE TABLE usuarios (
   id SERIAL PRIMARY KEY,
   "role" TEXT NOT NULL,
   "password" TEXT,
   email TEXT
 );
-
 CREATE TABLE incidentes (
   id SERIAL PRIMARY KEY,
   id_usuario INTEGER NOT NULL,
