@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS jurassic;
 CREATE DATABASE jurassic;
 \c jurassic; --Te mueve a la base de datos
@@ -53,28 +52,28 @@ UNIQUE (email);
 
 -- INSERTIONS
 
-INSERT INTO lugares(nombre)
-values('Centro turistico'),
-values('Laboratorios'),
-values('Restaurante'),
-values('Centro operativo'),
-values('Triceratops'),
-values('Dilofosaurios'),
-values('Velociraptors'),
-values('TRex'),
-values('Planicie de los herbívoros');
+INSERT INTO lugares(nombre) VALUES
+('Centro turistico'),
+('Laboratorios'),
+('Restaurante'),
+('Centro operativo'),
+('Triceratops'),
+('Dilofosaurios'),
+('Velociraptors'),
+('TRex'),
+('Planicie de los herbívoros');
 
-INSERT INTO tipos_incidentes(nombre)
-values('Falla electrica'),
-values('Fuga de herbivoro'),
-values('Fuga de Velociraptors'),
-values('Fuga de TRex'),
-values('Robo de ADN'),
-values('Auto descompuesto'),
-values('Visitantes en zona no autorizada');
+INSERT INTO tipos_incidentes(nombre) VALUES
+('Falla electrica'),
+('Fuga de herbivoro'),
+('Fuga de Velociraptors'),
+('Fuga de TRex'),
+('Robo de ADN'),
+('Auto descompuesto'),
+('Visitantes en zona no autorizada');
 
-INSERT INTO usuarios("role")
-values('PUBLICO');
+INSERT INTO usuarios("role") VALUES
+('PUBLICO');
 
-INSERT INTO usuarios(email, "role", "password")
-values('admin@jurassic.com','ADMIN','jurassic');
+INSERT INTO usuarios (email, "role", "password") VALUES
+('admin@jurassic.com','ADMIN','jurassic');
