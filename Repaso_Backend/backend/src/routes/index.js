@@ -1,17 +1,13 @@
 const express = require('express')
 
+const { mainController } = require('../controllers')
+
 const router = express.Router()
 
 // Autorización
-router.post('/login', (req, res) => {
-  res.status(200).json({ msg: 'Login' })
-})
+router.post('/login', mainController.login)
 // Usuarios
-router.get('/usuarios', (req, res) => {
-  res.status(200).json({ msg: 'usuarios' })
-})
-router.put('/usuarios/:id', (req, res) => {
-  res.status(200).json({ msg: 'usuarios/:id' })
-})
+router.get('/usuarios', mainController.getAllUsuarios)
+router.put('/usuarios/:id', mainController.updateOneUsuario)
 
 module.exports = { router }
