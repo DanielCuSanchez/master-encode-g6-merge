@@ -1,0 +1,22 @@
+BACKEND
+Lugares
+-Consulta GET
+
+Tipos_incidentes
+-Consulta GET
+
+Usuarios
+-Consulta GET
+-Actualizacion PUT
+
+Incidentes
+-Consulta GET
+-Creacion POST
+
+Autorizacion
+-Login POST
+
+
+FRONTEND
+-Logout
+-Context
