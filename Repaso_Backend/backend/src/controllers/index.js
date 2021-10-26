@@ -1,3 +1,4 @@
+const { MainModel } = require('../models')
 
 const mainController = {
   login: (req, res) => {
@@ -6,9 +7,20 @@ const mainController = {
     })
   },
   getAllUsuarios: (req, res) => {
-    res.status(200).json({
-      msg: 'usuarios 😄'
-    })
+    MainModel.getAllUsuarios()
+      .then((response) => {
+        console.log(response)
+        res.status(200).json({
+          msg: response.rows,
+          total: response.rowCount
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(200).json({
+          msg: 'ERR usuarios 😄'
+        })
+      })
   },
   updateOneUsuario: (req, res) => {
     res.status(200).json({
