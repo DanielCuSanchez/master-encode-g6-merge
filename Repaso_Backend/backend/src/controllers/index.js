@@ -4,16 +4,22 @@ const bcrypt = require('bcrypt')
 const mainController = {
   login: (req, res) => {
     const { password, email } = req.body
+    // Realizamos la consulta a la DB por el campo email
     MainModel.getOneUsuarioByEmail(email)
       .then((response) => {
+        // Comparamos el registro de la base datos si es que existe
         if (!(response.rowCount === 1)) {
           res.status(404).json({
             msg: 'email no encontrado'
           })
           return
         }
-        const match = bcrypt.compareSync(password, response.rows[0].password)
-
+        // Esta funcion compara el texto plano y el hash
+        const match = bcrypt.compareSync(
+          password,
+          response.rows[0].password
+        )
+        // Si no es un match correcto entre hash y texto plano damos retro al cliente
         if (!match) {
           res.status(500).json({
             msg: 'Credenciales invalidas'
@@ -21,6 +27,7 @@ const mainController = {
           return
         }
 
+        // Continuamos con el resto del login
         res.status(200).json({
           msg: 'Login Exitoso'
         })
