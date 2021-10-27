@@ -6,9 +6,9 @@ Tipos_incidentes
 -Consulta GET
 
 Usuarios
--Consulta TODOS GET
--Consulta UNO GET
--Actualizacion PUT
+-Consulta TODOS GET -- CHECK
+-Consulta UNO GET -- CHECK
+-Actualizacion PUT -- CHECK
 
 Incidentes
 -Consulta GET

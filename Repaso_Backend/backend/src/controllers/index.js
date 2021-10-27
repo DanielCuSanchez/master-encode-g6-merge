@@ -3,9 +3,34 @@ const bcrypt = require('bcrypt')
 
 const mainController = {
   login: (req, res) => {
-    res.status(200).json({
-      msg: 'login 😄'
-    })
+    const { password, email } = req.body
+    MainModel.getOneUsuarioByEmail(email)
+      .then((response) => {
+        if (!(response.rowCount === 1)) {
+          res.status(404).json({
+            msg: 'email no encontrado'
+          })
+          return
+        }
+        const match = bcrypt.compareSync(password, response.rows[0].password)
+
+        if (!match) {
+          res.status(500).json({
+            msg: 'Credenciales invalidas'
+          })
+          return
+        }
+
+        res.status(200).json({
+          msg: 'Login Exitoso'
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+          msg: 'error'
+        })
+      })
   },
   getAllUsuarios: (req, res) => {
     MainModel.getAllUsuarios()

@@ -7,6 +7,9 @@ const MainModel = {
   getAllUsuarios: () => {
     return DB.query('SELECT * FROM usuarios')
   },
+  getOneUsuarioByEmail: (email) => {
+    return DB.query('SELECT * FROM usuarios WHERE email = $1', [email])
+  },
   getOneUsuario: (id) => {
     return DB.query('SELECT * FROM usuarios WHERE id = $1', [id])
   },
