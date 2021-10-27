@@ -39,15 +39,26 @@ const mainController = {
       })
   },
   updateOneUsuarioPassword: (req, res) => {
+    const { id } = req.params
     // Texto plano
     const { password } = req.body
     const saltRounds = 10
     const salt = bcrypt.genSaltSync(saltRounds)
     const hash = bcrypt.hashSync(password, salt)
 
-    res.status(200).json({
-      msg: hash
-    })
+    MainModel.updateOneUsuarioPassword(id, hash)
+      .then((response) => {
+        res.status(201).json({
+          msg: 'Updated',
+          count: response.rowCount
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+          msg: 'error'
+        })
+      })
   }
 }
 
