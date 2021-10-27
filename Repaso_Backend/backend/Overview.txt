@@ -15,7 +15,7 @@ Incidentes
 -Creacion POST
 
 Autorizacion
--Login POST
+-Login POST -- CHECK
 
 
 FRONTEND

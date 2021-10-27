@@ -1,5 +1,6 @@
 const { MainModel } = require('../models')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 const mainController = {
   login: (req, res) => {
@@ -28,8 +29,16 @@ const mainController = {
         }
 
         // Continuamos con el resto del login
+
+        // Crearemos token
+
+        const token = jwt.sign(
+          { MIPAYLOAD: response.rows[0].id },
+          'mi_secreto',
+          { expiresIn: '30s' }
+        )
         res.status(200).json({
-          msg: 'Login Exitoso'
+          msg: token
         })
       })
       .catch((error) => {
