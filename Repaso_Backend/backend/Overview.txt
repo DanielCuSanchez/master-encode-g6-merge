@@ -6,7 +6,8 @@ Tipos_incidentes
 -Consulta GET
 
 Usuarios
--Consulta GET
+-Consulta TODOS GET
+-Consulta UNO GET
 -Actualizacion PUT
 
 Incidentes

@@ -7,7 +7,10 @@ const MainModel = {
   getAllUsuarios: () => {
     return DB.query('SELECT * FROM usuarios')
   },
-  updateOneUsuario: () => {
+  getOneUsuario: (id) => {
+    return DB.query('SELECT * FROM usuarios WHERE id = $1', [id])
+  },
+  updateOneUsuarioPassword: () => {
 
   }
 }

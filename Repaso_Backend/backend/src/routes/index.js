@@ -8,6 +8,7 @@ const router = express.Router()
 router.post('/login', mainController.login)
 // Usuarios
 router.get('/usuarios', mainController.getAllUsuarios)
-router.put('/usuarios/:id', mainController.updateOneUsuario)
+router.get('/usuarios/:id', mainController.getOneUsuario)
+router.put('/usuarios/:id', mainController.updateOneUsuarioPassword)
 
 module.exports = { router }

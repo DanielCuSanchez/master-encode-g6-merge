@@ -4,7 +4,7 @@ const cors = require('cors')
 const { router } = require('./routes')
 const app = express()
 // Server port
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 4001
 // Middlewares
 app.use(express.json())
 app.use(morgan('dev'))
