@@ -46,7 +46,6 @@ REFERENCES tipos_incidentes(id);
 ALTER TABLE usuarios
 ADD CONSTRAINT email
 UNIQUE (email);
-
 -- INSERTIONS
 
 INSERT INTO lugares(nombre) VALUES

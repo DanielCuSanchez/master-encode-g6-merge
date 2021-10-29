@@ -100,6 +100,81 @@ const mainController = {
           msg: 'error'
         })
       })
+  },
+  getAllLugares: (req, res) => {
+    MainModel.getAllLugares()
+      .then((response) => {
+        res.status(201).json({
+          msg: response.rows,
+          count: response.rowCount
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+          msg: 'error'
+        })
+      })
+  },
+  getAllTiposIncidentes: (req, res) => {
+    MainModel.getAllTiposIncidentes()
+      .then((response) => {
+        res.status(201).json({
+          msg: response.rows,
+          count: response.rowCount
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+          msg: 'error'
+        })
+      })
+  },
+  postOneIncidente: (req, res) => {
+    MainModel.postOneIncidente(req.body)
+      .then((response) => {
+        res.status(201).json({
+          msg: response.rows,
+          count: response.rowCount
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+          msg: 'error'
+        })
+      })
+  },
+  getAllIncidentes: (req, res) => {
+    MainModel.getAllIncidentes()
+      .then((response) => {
+        res.status(201).json({
+          msg: response.rows,
+          count: response.rowCount
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+          msg: 'error'
+        })
+      })
+  },
+  getOneIncidente: (req, res) => {
+    MainModel.getOneIncidente(req.params.id)
+      .then((response) => {
+        res.status(201).json({
+          msg: response.rows[0],
+          count: response.rowCount
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+          msg: 'error'
+        })
+      })
   }
 }
 

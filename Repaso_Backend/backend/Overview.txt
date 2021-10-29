@@ -1,9 +1,9 @@
 BACKEND
 Lugares
--Consulta GET
+-Consulta GET -- CHECK
 
 Tipos_incidentes
--Consulta GET
+-Consulta GET -- CHECK
 
 Usuarios
 -Consulta TODOS GET -- CHECK
@@ -11,7 +11,8 @@ Usuarios
 -Actualizacion PUT -- CHECK
 
 Incidentes
--Consulta GET
+-Consulta UNO GET
+-Consulta TODOS GET
 -Creacion POST
 
 Autorizacion
