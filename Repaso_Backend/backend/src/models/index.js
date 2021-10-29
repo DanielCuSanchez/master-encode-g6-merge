@@ -63,9 +63,20 @@ const MainModel = {
   },
   getOneIncidente: (id) => {
     const QUERY = `
-    SELECT * FROM incidentes
+    SELECT
+    I.id,
+    U.role as usuario,
+    L.nombre as lugar,
+    TI.nombre as tipo_incidente
+    from incidentes I, usuarios U, lugares L, tipos_incidentes TI
     WHERE
-    id = $1
+    I.id = $1
+    AND
+    I.id_usuario = U.id
+    AND
+    I.id_lugar = L.id
+    AND
+    I.id_tipo_incidente = TI.id
     `
     return DB.query(QUERY, [id])
   }
