@@ -5,6 +5,8 @@ import { Card } from "react-materialize"
 export const RenderIncidentes = ({ agregarIncidente }) => {
 
   const [incidentes, setIncidentes] = useState([])
+
+  // Se ejecuta cada vez que se hace un post de un incidente
   useEffect(() => {
     const getIncidentes = async () => {
       const response = await fetch("http://localhost:4001/incidentes")
@@ -18,6 +20,7 @@ export const RenderIncidentes = ({ agregarIncidente }) => {
     <div>
       <h2>Incidentes</h2>
       {
+        // Retona una card por cada incidente
         incidentes.map(incidente => {
           return (
             <Card

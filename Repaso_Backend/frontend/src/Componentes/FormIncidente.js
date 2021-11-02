@@ -32,8 +32,9 @@ export const FormIncidente = ({ cambiarEstado }) => {
   }, [])
 
   const handlerSubmitIncidente = async (data) => {
+    //Creamos el post para el backend
     const incidente = {
-      ...data,
+      ...data,//se copia la data que da react hook form (Leer documentación)
       id_usuario: 1
     }
     try {
@@ -49,6 +50,7 @@ export const FormIncidente = ({ cambiarEstado }) => {
     <>
       <h3>Registrar incidente</h3>
       <form onSubmit={handleSubmit(handlerSubmitIncidente)}>
+        {/* Se utiliza un contralador para manejar elementos de input variable. Revisar documentación */}
         <Controller
           {...register("id_lugar")}
           control={control}

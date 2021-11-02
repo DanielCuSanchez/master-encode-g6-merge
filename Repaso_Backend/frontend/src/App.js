@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function App() {
 
+  //Se utiliza para manejar el estado de saber si es que hicimos un post de un incidente y poder actualizar nuestra lista de incidentes con un nuevo fetch
   const [agregarIncidente, setAgregarIncidente] = useState(false)
   return (
     <>
@@ -16,9 +17,11 @@ function App() {
       <Container>
         <Row>
           <Col s={6}>
+            {/* Hace el post de un incidente */}
             <FormIncidente cambiarEstado={setAgregarIncidente} />
           </Col>
           <Col s={6}>
+            {/* Renderiza los todos los incidentes */}
             <RenderIncidentes agregarIncidente={agregarIncidente} />
           </Col>
         </Row>
