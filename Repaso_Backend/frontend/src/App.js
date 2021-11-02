@@ -1,7 +1,11 @@
 import { FormIncidente } from "./Componentes/FormIncidente";
 import { Container, Row, Col, Navbar } from "react-materialize"
+import { RenderIncidentes } from "./Componentes/RenderIncidentes";
+import { useState } from "react";
 
 function App() {
+
+  const [agregarIncidente, setAgregarIncidente] = useState(false)
   return (
     <>
       <Navbar
@@ -12,10 +16,10 @@ function App() {
       <Container>
         <Row>
           <Col s={6}>
-            <FormIncidente />
+            <FormIncidente cambiarEstado={setAgregarIncidente} />
           </Col>
           <Col s={6}>
-            <h3>Col - 6</h3>
+            <RenderIncidentes agregarIncidente={agregarIncidente} />
           </Col>
         </Row>
       </Container>
