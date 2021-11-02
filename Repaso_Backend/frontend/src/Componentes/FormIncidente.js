@@ -1,51 +1,41 @@
+import { useEffect, useState } from "react"
 
-import { Select } from 'react-materialize';
 export const FormIncidente = () => {
+
+  const URL_BASE = "http://localhost:4001"
+
+  const [lugares, setLugares] = useState([]) //Estado del componente de lugares
+  const [tiposIncidentes, setTiposIncidentes] = useState([])//Estado del componente de tipos de incidentes
+
+  useEffect(() => {
+
+    //Obtienes los lugares
+    const getLugares = async () => {
+      const respuesta = await fetch(`${URL_BASE}/lugares`)
+      const data = await respuesta.json()
+      setLugares(data.msg)
+    }
+    //Obtienes los tipos de incidentes
+    const getTiposIncidentes = async () => {
+      const respuesta = await fetch(`${URL_BASE}/tipos-incidentes`)
+      const data = await respuesta.json()
+      setTiposIncidentes(data.msg)
+    }
+    getLugares()
+    getTiposIncidentes()
+  }, [])
+
+
   return (
     <>
-      <h2>Form incidente</h2>
-      <form className="col s12">
-        <Select
-          id="Select-36"
-          multiple={false}
-          onChange={function noRefCheck() { }}
-          options={{
-            classes: '',
-            dropdownOptions: {
-              alignment: 'left',
-              autoTrigger: true,
-              closeOnClick: true,
-              constrainWidth: true,
-              coverTrigger: true,
-              hover: false,
-              inDuration: 150,
-              onCloseEnd: null,
-              onCloseStart: null,
-              onOpenEnd: null,
-              onOpenStart: null,
-              outDuration: 250
-            }
-          }}
-          value=""
-        >
-          <option
-            disabled
-            value=""
-          >
-            Choose your option
-          </option>
-          <option value="1">
-            Option 1
-          </option>
-          <option value="2">
-            Option 2
-          </option>
-          <option value="3">
-            Option 3
-          </option>
-        </Select>
-      </form>
-
+      <h3>Registrar incidente</h3>
+      {
+        JSON.stringify(lugares)
+      }
+      <p>-------------------------</p>
+      {
+        JSON.stringify(tiposIncidentes)
+      }
     </>
   )
 }
