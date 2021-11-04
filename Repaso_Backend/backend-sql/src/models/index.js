@@ -1,9 +1,7 @@
+
 const { DB } = require('../database')
 
 const MainModel = {
-  login: () => {
-
-  },
   getAllUsuarios: () => {
     return DB.query('SELECT * FROM usuarios', [])
   },

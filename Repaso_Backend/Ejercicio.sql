@@ -18,6 +18,8 @@ CREATE TABLE usuarios (
   "password" TEXT,
   email TEXT
 );
+
+
 CREATE TABLE incidentes (
   id SERIAL PRIMARY KEY,
   id_usuario INTEGER NOT NULL,
