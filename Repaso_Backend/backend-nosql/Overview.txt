@@ -1,0 +1,27 @@
+BACKEND
+Lugares
+-Inserción POST --CHECK
+-Consulta GET --CHECK
+
+Tipos_incidentes
+-Inserción POST --CHECK
+-Consulta GET --CHECK
+
+Usuarios
+-Inserción UNO POST --CHECK
+-Consulta TODOS GET --CHECK
+-Consulta UNO GET --CHECK
+-Actualizacion PUT --CHECK
+
+Incidentes
+-Consulta UNO GET
+-Consulta TODOS GET
+-Creacion POST
+
+Autorizacion
+-Login POST
+
+
+FRONTEND
+-Logout
+-Context

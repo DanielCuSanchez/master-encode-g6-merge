@@ -12,6 +12,7 @@ CREATE TABLE tipos_incidentes (
   id SERIAL PRIMARY KEY,
   nombre TEXT NOT NULL
 );
+
 CREATE TABLE usuarios (
   id SERIAL PRIMARY KEY,
   "role" TEXT NOT NULL,
