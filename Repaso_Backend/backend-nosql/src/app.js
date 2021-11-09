@@ -5,7 +5,7 @@ const { initDatabase } = require("./database")
 
 const app = express()
 
-const PORT = 4000 || process.env.PORT
+const PORT = 4001 || process.env.PORT
 //Configuramos middleware
 app.use(morgan("dev"))
 app.use(express.json())

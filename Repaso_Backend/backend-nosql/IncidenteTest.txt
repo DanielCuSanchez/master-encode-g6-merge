@@ -1,0 +1,17 @@
+6189d0c7e1872deb4ce56e30 usuario
+
+6189d190e1872deb4ce56e33 Lugar
+
+6189d1b7e1872deb4ce56e35 tipo Incidente
+
+{
+	"usuario":"6189d0c7e1872deb4ce56e30",
+	"lugar": "6189d190e1872deb4ce56e33",
+	"tipo_incidente":"6189d1b7e1872deb4ce56e35"
+}
+
+{
+	"role":"ADMIN",
+	"password": "DEVFEDEFV21",
+	"email":"daniel@devf.mx"
+}

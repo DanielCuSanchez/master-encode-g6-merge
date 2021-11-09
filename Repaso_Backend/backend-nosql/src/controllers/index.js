@@ -27,6 +27,19 @@ const controller = {
   getAllIncidentes: async (req, res) => {
     try {
       const incidentes = await Incidente.find()
+        .populate({
+          path: "usuario",
+          select: "role"
+        })
+        .populate({
+          path: "lugar",
+          select: "nombre"
+        })
+        .populate({
+          path: "tipo_incidente",
+          select: "nombre"
+        })
+
       res.json({
         msg: "GET ALL Incidentes",
         data: incidentes
@@ -42,6 +55,19 @@ const controller = {
   getOneIncidente: async (req, res) => {
     try {
       const incidente = await Incidente.findById(req.params.id)
+        .populate({
+          path: "usuario",
+          select: "role"
+        })
+        .populate({
+          path: "lugar",
+          select: "nombre"
+        })
+        .populate({
+          path: "tipo_incidente",
+          select: "nombre"
+        })
+
       res.json({
         msg: "GET ONE Incidente",
         data: incidente
