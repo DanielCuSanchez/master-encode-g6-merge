@@ -1,0 +1,14 @@
+.input{
+  border: 1px solid black;
+  width: 80%;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  max-width: 600px;
+  border: 1px solid blue;
+}

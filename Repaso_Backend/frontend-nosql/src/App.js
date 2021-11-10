@@ -1,13 +1,19 @@
-import { FormUser } from "./Componentes/FormUser";
+import { BrowserRouter as Router, useRoutes } from "react-router-dom"
+import { routes } from "./routes";
 
+const AppRoutes = () => {
+  const contenido = useRoutes(routes)
+  return (
+    <>
+      {contenido}
+    </>
+  )
+}
 function App() {
   return (
-    <div >
-      <p className="uppercase text-white mx-4 my-4">hola mundo</p>
-
-      <FormUser />
-    </div>
+    <Router >
+      <AppRoutes />
+    </Router>
   );
 }
-
 export default App;
