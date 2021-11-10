@@ -3,9 +3,7 @@ import axios from "axios"
 import "./style.css"
 
 export const FormUsuario = () => {
-
   const initialValues = { email: '', password: '', role: '' }
-
   const validateFunction = (values) => {
     const errors = {};
     if (!values.email) {
@@ -17,7 +15,6 @@ export const FormUsuario = () => {
     }
     return errors;
   }
-
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       await axios.post("http://localhost:4001/usuarios", values)
@@ -27,7 +24,6 @@ export const FormUsuario = () => {
       console.log(error)
     }
   }
-
   return (
     <Formik
       initialValues={initialValues}
@@ -65,7 +61,6 @@ export const FormUsuario = () => {
             value={values.password}
           />
           {errors.password && touched.password && errors.password}
-
           <input
             placeholder="Ingresa ROLE"
             className="input"
