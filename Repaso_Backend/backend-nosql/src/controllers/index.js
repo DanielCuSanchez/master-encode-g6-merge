@@ -12,7 +12,7 @@ const controller = {
   postOneIncidente: async (req, res) => {
     try {
       const response = await Incidente.create(req.body)
-      res.json({
+      res.status(201).json({
         msg: "POST Incidente",
         data: response
       })
@@ -40,7 +40,7 @@ const controller = {
           select: "nombre"
         })
 
-      res.json({
+      res.status(200).json({
         msg: "GET ALL Incidentes",
         data: incidentes
       })
@@ -68,7 +68,7 @@ const controller = {
           select: "nombre"
         })
 
-      res.json({
+      res.status(200).json({
         msg: "GET ONE Incidente",
         data: incidente
       })
@@ -86,7 +86,7 @@ const controller = {
   postOneLugar: async (req, res) => {
     try {
       const response = await Lugar.create(req.body)
-      res.json({
+      res.status(201).json({
         msg: "POST Lugar",
         data: response
       })
@@ -101,7 +101,7 @@ const controller = {
   getAllLugares: async (req, res) => {
     try {
       const lugares = await Lugar.find()
-      res.json({
+      res.status(200).json({
         msg: "GET ALL Lugares",
         data: lugares
       })
@@ -117,7 +117,7 @@ const controller = {
   postOneTipoIncidente: async (req, res) => {
     try {
       const response = await TipoIncidente.create(req.body)
-      res.json({
+      res.status(201).json({
         msg: "POST TipoIncidente",
         data: response
       })
@@ -134,7 +134,7 @@ const controller = {
   getAllTiposIncidentes: async (req, res) => {
     try {
       const tiposDeIncidentes = await TipoIncidente.find()
-      res.json({
+      res.status(200).json({
         msg: "GET ALL Lugares",
         data: tiposDeIncidentes
       })
@@ -151,7 +151,7 @@ const controller = {
   postOneUser: async (req, res) => {
     try {
       const response = await Usuario.create(req.body)
-      res.json({
+      res.status(201).json({
         msg: "Post user",
         data: response
       })
@@ -166,7 +166,7 @@ const controller = {
   getAllUsuarios: async (req, res) => {
     try {
       const usuarios = await Usuario.find()
-      res.json({
+      res.status(200).json({
         msg: "GET ALL Usuarios",
         data: usuarios
       })
@@ -181,7 +181,7 @@ const controller = {
   getOneUsuario: async (req, res) => {
     try {
       const usuario = await Usuario.findById(req.params.id)
-      res.json({
+      res.status(200).json({
         msg: "GET ONE Usuario",
         data: usuario
       })
@@ -202,7 +202,7 @@ const controller = {
           new: true
         }
       )
-      res.json({
+      res.status(201).json({
         msg: "PUT ONE Usuario",
         data: response
       })

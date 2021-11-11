@@ -25,57 +25,60 @@ export const FormUsuario = () => {
     }
   }
   return (
-    <Formik
-      initialValues={initialValues}
-      validate={validateFunction}
-      onSubmit={handleSubmit}
-    >
-      {({
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-        /* and other goodies */
-      }) => (
-        <form onSubmit={handleSubmit} className="form">
-          <input
-            type="email"
-            name="email"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.email}
-            className="input"
-            placeholder="Ingresa tu email"
-          />
-          {errors.email && touched.email && errors.email}
-          <input
-            placeholder="Ingresa tu password"
-            className="input"
-            type="password"
-            name="password"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.password}
-          />
-          {errors.password && touched.password && errors.password}
-          <input
-            placeholder="Ingresa ROLE"
-            className="input"
-            type="text"
-            name="role"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.role}
-          />
-          {errors.role && touched.role && errors.role}
-          <button type="submit" disabled={isSubmitting}>
-            Submit
-          </button>
-        </form>
-      )}
-    </Formik>
+    <>
+      <h2>Crear usuario</h2>
+      <Formik
+        initialValues={initialValues}
+        validate={validateFunction}
+        onSubmit={handleSubmit}
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting,
+          /* and other goodies */
+        }) => (
+          <form onSubmit={handleSubmit} className="form">
+            <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+              className="input"
+              placeholder="Ingresa tu email"
+            />
+            {errors.email && touched.email && errors.email}
+            <input
+              placeholder="Ingresa tu password"
+              className="input"
+              type="password"
+              name="password"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.password}
+            />
+            {errors.password && touched.password && errors.password}
+            <input
+              placeholder="Ingresa ROLE"
+              className="input"
+              type="text"
+              name="role"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.role}
+            />
+            {errors.role && touched.role && errors.role}
+            <button type="submit" disabled={isSubmitting}>
+              Submit
+            </button>
+          </form>
+        )}
+      </Formik>
+    </>
   )
 }

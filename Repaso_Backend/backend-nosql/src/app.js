@@ -7,6 +7,8 @@ const { initDatabase } = require("./database")
 const app = express()
 
 const PORT = 4001 || process.env.PORT
+
+app.disable('etag')
 //Configuramos middleware
 app.use(cors())
 app.use(morgan("dev"))
