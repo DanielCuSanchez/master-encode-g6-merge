@@ -1,12 +1,10 @@
 def run():
-  numero = 0
-  # while numero < 30:
-  #   print(numero)
-  #   numero = numero + 1
+  frase = "Hola mundo"
 
-  # for numero in range(0,30):
-  #   print(numero)
+  frase = frase.replace(' ', '').lower()
 
+
+  print(frase[::-1])
 
 
 
