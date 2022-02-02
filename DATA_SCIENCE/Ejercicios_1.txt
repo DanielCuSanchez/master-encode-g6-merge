@@ -1,0 +1,5 @@
+1) Genera un programa que reciba tu nombre y lo imprima letra por letra.
+
+2) Genera un programa que imprima las tablas de multiplicar.
+
+3) Genera un programa que imprima los numeros pares de entre 0 - 100

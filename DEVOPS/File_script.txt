@@ -1,0 +1,5 @@
+Ramon,Software Enginer
+Pedro,Devops
+Juan,Frontend Junior
+Diego,Backend Junior
+Gustavo,Frontend Senior
