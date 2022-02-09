@@ -1,9 +1,8 @@
+def high (funcion):
+  funcion()
 
-# def high (func):
-#   func()
-
-# def soyFuncion():
-#   print("soyFuncion")
+def soyFuncion():
+  print("Soy la funcion del interior")
 
 
 # high(soyFuncion)
@@ -14,13 +13,17 @@
 # Filter
 
 lista = [1,4,5,6,9,13,19,21]
-listaImpares = list(filter(lambda x: x%2 != 0, lista))
-print("FILTER",listaImpares)
+listaImpares = list(filter(lambda x: x % 2 != 0, lista))
+listaPares = list(filter(lambda elemento: elemento % 2 == 0,lista ))
+
+
+print("FILTER_IMPARES",listaImpares)
+print("FILTER_PARES",listaPares)
 
 
 # Map
-
-listaCuadrados = list(map(lambda x: x**2, lista))
+listaNueva = [1,2,3,4,5,6]
+listaCuadrados = list(map(lambda x: x**2, listaNueva))
 print("MAP", listaCuadrados)
 
 
@@ -30,11 +33,11 @@ print("MAP", listaCuadrados)
 # en la siguiente iteración a es el resultado de la primer multiplicación y b el siguiente elemento
 from functools import reduce
 
-listaReduce = [2,2,2,2]
+listaReduce = [12,3,32,52,65,85,7]
 # 2x2 = 4
 # 4x2 = 8
 # 8x2 = 16
 
-listaMultiplicados = reduce(lambda a,b: a*b, listaReduce)
+listaMultiplicados = reduce(lambda a,b: a - b, listaReduce )
 
-print("REDUCE", listaMultiplicados)
+print("REDUCE_MULT", listaMultiplicados)
